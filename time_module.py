@@ -67,3 +67,24 @@ print("s:", time.mktime(t))
 # 8: format output time ------------------------------------
 time_string = time.strftime("%d/%m/%Y, %H:%M:%S", time.localtime())
 print(time_string)
+
+# 9: asctime() ---------------------------------------------
+# The strftime() function takes struct_time as an argument and 
+# returns a string representing it based on the format code used.
+# خروجی قابل فهم و از نوع رشته ای
+t = (2018, 12, 28, 
+     8, 44, 4, 
+     4, 362, 0)
+
+result = time.asctime(t)
+print("Result:", result)
+print("type:  ", type(result))
+
+# strptime() ------------------------------------------------
+# The strptime() function parses a string representing time
+# and returns struct_time.
+
+time_string = "21 June, 2018"
+result = time.strptime(time_string, "%d %B, %Y")
+
+print(result)
